@@ -83,7 +83,7 @@ function App() {
 
   const handleChildChange = (e) => {
     setNewChild({ ...newChild, [e.target.name]: e.target.value });
-  };
+  }; 
 
   const addChild = () => {
     setChildren([...children, newChild]);
