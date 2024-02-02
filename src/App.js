@@ -12,6 +12,12 @@ function App() {
     setChildcareRate(event.target.value);
   };
 
+  const [activeTab, setActiveTab] = useState('childcareCost');
+
+  const handleTabChange = (tab) => {
+    setActiveTab(tab);
+  };
+
   const handleMonthChange = (event) => {
     setSelectedMonth(event.target.value);
   };
@@ -99,6 +105,7 @@ function App() {
 
 
     <div className="container">
+
       <h1>Childcare Cost Calculator</h1>
       <div>
         <h3>Add Child</h3>
@@ -149,7 +156,7 @@ function App() {
             </tbody>
           </table>
         </div>
-        <h3>Rates</h3>
+        <h3>Rates:</h3>
       </div>
       <div className="input-group">
         <label htmlFor="childcare-rate">Childcare Rate per Day: </label>
@@ -171,7 +178,17 @@ function App() {
           ))}
         </select>
       </div>
-
+      <h2>Calculation Options</h2>
+      <div className="tab-navigation">
+        <button onClick={() => handleTabChange('daysofWeek')} className={activeTab === 'daysofWeek' ? 'active' : ''}>Specific Days of Week</button>
+        <button onClick={() => handleTabChange('testtab2')} className={activeTab === 'testtab2' ? 'active' : ''}>Test tab 2</button>
+        <button onClick={() => handleTabChange('testtab3')} className={activeTab === 'testtab3' ? 'active' : ''}>Test tab 3</button>
+        <button onClick={() => handleTabChange('testtab4')} className={activeTab === 'testtab4' ? 'active' : ''}>Test tab 4</button>
+        <button onClick={() => handleTabChange('testtab5')} className={activeTab === 'testtab5' ? 'active' : ''}>Test tab 5</button>
+        {/* More tabs as needed */}
+      </div>
+      <div className='tab-content'>
+      {activeTab === 'daysofWeek' && (
       <div className="checkbox-group">
         {daysOfWeek.map((day, index) => (
           <div key={index}>
@@ -184,6 +201,20 @@ function App() {
             <label htmlFor={`day-${index}`}>{day}</label>
           </div>
         ))}
+      </div>
+       )}
+       {activeTab === 'testtab2' && (
+        <h3>Test of Tab 2</h3>
+        )}
+        {activeTab === 'testtab3' && (
+          <h3>Test of Tab 3</h3>
+        )}
+        {activeTab === 'testtab4' && (
+          <h3>Test of Tab 4</h3>
+        )}
+        {activeTab === 'testtab5' && (
+          <h3>Test of Tab 5</h3>
+        )}
       </div>
 
       <button className="btn-calculate" onClick={calculateTotal}>Calculate</button>

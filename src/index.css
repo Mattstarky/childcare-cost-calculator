@@ -13,7 +13,7 @@ code {
 }
 
 .container {
-  max-width: 600px;
+  max-width: 800px;
   margin: auto;
   background: white;
   padding: 20px;
@@ -38,6 +38,7 @@ code {
 }
 
 .checkbox-group {
+  margin: 20px;
   display: flex;
   justify-content: space-between;
 }
@@ -47,6 +48,7 @@ code {
 }
 
 .btn-calculate {
+  margin-top: 20px;
   background-color: #007bff;
   color: white;
   border: none;
@@ -118,4 +120,21 @@ button:hover {
 
 .flex-item:last-child {
   margin-right: 0;
+}
+
+.tab-navigation button {
+  background-color: #aa3c3c;
+  border: none;
+  padding: 10px 20px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.tab-navigation button:hover {
+  background-color: #192a8b;
+}
+
+.tab-navigation button.active {
+  background-color: #184ad4;
+  color: #e2e2e2;
 }
